@@ -73,8 +73,7 @@ function setupStatefulComponent(instance) {
 
     const setupContext = createSetupContext(instance);
     // 真实的处理场景里面应该是只在 dev 环境才会把 props 设置为只读的
-    const setupResult =
-      setup && setup(shallowReadonly(instance.props), setupContext);
+    const setupResult = setup(shallowReadonly(instance.props), setupContext);
 
     setCurrentInstance(null);
 
